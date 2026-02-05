@@ -15,7 +15,13 @@ This is a technical assessment project for a Fleet Management System. It allows 
    ```bash
    docker compose up --build 
    ```
-2. **Access the Api**
+2. **Initialise DB** : In a new terminal window, run the following commands to apply migrations and create an admin user:
+    ```
+    docker compose exec web python manage.py migrate
+    docker compose exec web python manage.py createsuperuser
+    ```
+3. **Access the Api**
 - Web API: http://localhost:8000/api/
 
 - Admin Panel: http://localhost:8000/admin/
+ 
