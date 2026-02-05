@@ -43,5 +43,5 @@ class DeviceViewSet(viewsets.ModelViewSet):
         fleet = serializer.validated_data['fleet']
         if fleet.owner != self.request.user:
             from rest_framework.exceptions import PermissionDenied
-            raise PermissionDenied("Vous ne pouvez pas ajouter d'appareil à une flotte qui ne vous appartient pas.")
+            raise PermissionDenied("you cannot add devices to fleets you do not own.")
         serializer.save()
