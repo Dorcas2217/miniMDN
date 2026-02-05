@@ -7,7 +7,7 @@ class FleetSerializer(serializers.ModelSerializer):
     class Meta:
         model = Fleet
         fields = ['id', 'name', 'owner']
-        read_only_fields = ['owner'] # owner défini automatiquement.
+        read_only_fields = ['owner'] 
 
 # Serializer for Users
 class UserSerializer(serializers.ModelSerializer):
