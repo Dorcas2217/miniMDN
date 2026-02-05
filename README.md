@@ -1,21 +1,21 @@
-# Mini-MDM API
+# Mini MDN - Fleet & Device Management API
 
-This is a simplified Mobile Device Management (MDM) API built with **Django** and **Django Rest Framework (DRF)**. It allows users to manage fleets of devices with strict ownership and security rules.
+This is a technical assessment project for a Fleet Management System. It allows users to manage their fleets and devices through a secure REST API, with built-in data isolation and Docker support.
 
-## Features
-- **User Management**: View user details along with their owned fleets.
-- **Fleet Management**: Create and list fleets (with unique naming per user).
-- **Device Management**: Full CRUD operations for devices.
-- **Security**: Strict data isolation—users can only interact with their own data.
-- **Filtering**: Ability to filter devices by fleet.
+## 🛠 Features
+- **User Authentication**: Secure Token-based authentication.
+- **Data Isolation**: Users can only see and manage their own fleets and devices.
+- **REST API**: Full CRUD operations for Fleets and Devices.
+- **Filtering**: Easily filter devices by fleet using query parameters.
+- **Dockerized**: Ready to deploy with Docker and Docker Compose.
 
 ---
 
-## Technical Design Decisions
+1. **Build and start the containers:**
+   ```bash
+   docker compose up --build 
+   ```
+2. **Access the Api**
+- Web API: http://localhost:8000/api/
 
-### 1. Data Integrity & Constraints
-To respect the requirement that "Fleets belonging to the same User must have a unique name", I implemented a `UniqueConstraint` in the `Fleet` model:
-```python
-constraints = [
-    models.UniqueConstraint(fields=['name', 'owner'], name='unique_fleet_per_user')
-]
+- Admin Panel: http://localhost:8000/admin/
