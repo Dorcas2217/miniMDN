@@ -2,7 +2,7 @@
 
 This is a technical assessment project for a Fleet Management System. It allows users to manage their fleets and devices through a secure REST API, with built-in data isolation and Docker support.
 
-## 🛠 Features
+##  Features
 - **User Authentication**: Secure Token-based authentication.
 - **Data Isolation**: Users can only see and manage their own fleets and devices.
 - **REST API**: Full CRUD operations for Fleets and Devices.
